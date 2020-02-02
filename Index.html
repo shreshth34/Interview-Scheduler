@@ -1,7 +1,8 @@
+ <!DOCTYPE html>
 <html>
     <head>
         <title> Scheduler </title>
-
+        <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="./css/1-css.css">
 
     </head>
@@ -11,7 +12,7 @@
     </div>
       
 <div id="candidatez" style="width: 100px; float:left; height:100px;  margin:10px">
-
+                                        
   <table border="1">
     <tr>
     <td><input class = "messageCheckbox" type="checkbox"  value="1"><p id="demo1"></p><br></td>  
@@ -37,6 +38,7 @@
     <td><input class = "messageCheckbox" type="checkbox"  value="17"><p id="demo17"></p><br></td>
     <td><input class = "messageCheckbox" type="checkbox"  value="18"><p id="demo18"></p><br></td>
     </tr>
+    
     <tr>
     <td><input class = "messageCheckbox" type="checkbox"  value="19"><p id="demo19"></p><br></td>
     <td><input class = "messageCheckbox" type="checkbox"  value="20"><p id="demo20"></p><br></td>
@@ -50,14 +52,21 @@
     <input type="submit"  value="Submit" id="submit1"> <p> select time and press submit</p>
       
 </div>
-<script src = "./javascript/offset.js"></script>
 <div class="vl"></div>
-
-<div id="finalK" style="width: 800px; float:right ; height:100px; margin: 10px">
-<h1> Choose a Slot </h1>  
-<div>
-</div>
+<div id="finalK">
 </div>
 
- </body>
- </html>
+<div align = "right">
+    <select id="pot">
+        <option value=""> Select the timezone </option>
+        <option value="-5" class="USA">USA</option>
+        <option value="+8" class="Indonesia">Indonesia</option>
+        <option value="+5.5"class="India"> India </option>      
+    </select> 
+    <button id="btn-3">Convert TimeZone</button>
+</div>
+
+<script src = "./javascript/offset.js"></script>
+
+</body>
+</html>

@@ -1,9 +1,6 @@
-
-
-
 for (var i = 1; i <= 24; i++) {
 
-  var dat = new Date(`February 1, 2020 ${i - 1}:00:00`);
+  var dat = new Date(`February 3, 2020 ${i - 1}:00:00`) ;
   document.getElementById("demo" + `${i}`).innerHTML = dat;
 
 }
@@ -41,6 +38,7 @@ function interviewTime(getTime) {
 }
 
 
+
 document.getElementById("submit1").onclick = function () {
   var inputElements = document.getElementsByClassName('messageCheckbox');
   for (var i = 0; inputElements[i]; ++i) {
@@ -49,7 +47,7 @@ document.getElementById("submit1").onclick = function () {
     }
   }
 
-  var inputElementValues = document.getElementsByClassName('messageCheckbox')
+  var inputElementValues = document.getElementsByClassName('messageCheckbox');
     for(let l = 0 ; inputElementValues[l] ; ++l){
       if(inputElementValues[l].checked){
           datet.push(inputElementValues[l].value);
@@ -57,33 +55,47 @@ document.getElementById("submit1").onclick = function () {
     }
 }
 
-
+let printTime = [];
 document.getElementById('btn-2').onclick = () => {
 
 if(candidatet == false){
 alert('select a time first');
 } else {
-const printTime = []
+
+
 datet.forEach((e)=>{
 
-  var dat = new Date(`February 1, 2020 ${e - 1}:00:00`);
-  var pret = dat.toUTCString();
-  printTime.push(pret)
-  
+  var dat = new Date(`February 3, 2020 ${e - 1}:00:00`);
+  printTime.push(dat);
+
 })
   
   document.getElementById('finalK').innerHTML = printTime.join("<br>") ;
-
-
-
-
+ 
 } 
 }   
 
 
+changedTime = []
 
+document.getElementById("btn-3").onclick = () => { 
 
+var x = document.getElementById("pot").value;
+console.log(x);
 
+let offset = x;
 
+printTime.forEach((tip)=>{
 
+    let uDate = tip
+    let cityT = uDate + (3600000*offset);
+    let nd = new Date(cityT);
+    let grip = nd.toLocaleString();
   
+    changedTime.push(grip);
+
+  })
+
+  document.getElementById('finalK').innerHTML = changedTime.join("<br>");
+  
+}
