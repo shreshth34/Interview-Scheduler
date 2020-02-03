@@ -1,3 +1,4 @@
+//to take value of time from the time slots
 for (var i = 1; i <= 24; i++) {
 
   var dat = new Date(`February 3, 2020 ${i - 1}:00:00`) ;
@@ -5,6 +6,7 @@ for (var i = 1; i <= 24; i++) {
 
 }
 
+//saving the selected time slots by the candidate
 const candidatet = [];
 var datet = [];
 const getTime = [candidatet];
@@ -38,7 +40,7 @@ function interviewTime(getTime) {
 }
 
 
-
+//select the checked time slot by the candidate
 document.getElementById("submit1").onclick = function () {
   var inputElements = document.getElementsByClassName('messageCheckbox');
   for (var i = 0; inputElements[i]; ++i) {
@@ -47,6 +49,7 @@ document.getElementById("submit1").onclick = function () {
     }
   }
 
+  //select the value of selected time slot by the candidate
   var inputElementValues = document.getElementsByClassName('messageCheckbox');
     for(let l = 0 ; inputElementValues[l] ; ++l){
       if(inputElementValues[l].checked){
@@ -66,7 +69,7 @@ alert('select a time first');
 datet.forEach((e)=>{
 
   var dat = new Date(`February 3, 2020 ${e - 1}:00:00`);
-  printTime.push(dat);
+  printTime.push(dat.toUTCString());
 
 })
   
@@ -75,24 +78,24 @@ datet.forEach((e)=>{
 } 
 }   
 
-
+//convert time to local time of recruiter and print on screen
 changedTime = []
 
-document.getElementById("btn-3").onclick = () => { 
+document.getElementById("btn-3").onclick = () => {    
 
 var x = document.getElementById("pot").value;
 console.log(x);
 
 let offset = x;
 
-printTime.forEach((tip)=>{
+printTime.forEach((e)=>{
 
-    let uDate = tip
-    let cityT = uDate + (3600000*offset);
-    let nd = new Date(cityT);
-    let grip = nd.toLocaleString();
+    let pt = Date.parse(e);
+    let UTC = pt + (3600000*offset);
+    let nd = new Date(UTC);
+    let put = nd.toUTCString();
   
-    changedTime.push(grip);
+    changedTime.push(put);
 
   })
 
