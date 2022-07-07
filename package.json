@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "pg": "^7.17.1",
     "time-slots-generator": "^1.0.6",
     "timezone": "^1.0.23"
